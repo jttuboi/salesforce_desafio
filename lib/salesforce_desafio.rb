@@ -50,9 +50,10 @@ module SalesforceDesafio
     
     # def update_pessoa(pessoa)
     # end
-#     
-    # def remove_pessoa(pessoa)
-    # end
+    
+    def remove_pessoa(salesforce_id)
+      client.destroy('Lead', salesforce_id)
+    end
     
     def select_pessoas
       @pessoas = @client.query("select Id, FirstName, LastName, Email, Company, Title, Phone, Website from Lead")
