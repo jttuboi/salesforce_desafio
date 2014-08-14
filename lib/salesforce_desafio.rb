@@ -52,7 +52,7 @@ module SalesforceDesafio
     # end
     
     def remove_pessoa(salesforce_id)
-      client.destroy('Lead', salesforce_id)
+      # client.destroy('Lead', salesforce_id)
     end
     
     def select_pessoas
