@@ -15,11 +15,11 @@ require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://guides.rubygems.org/specification-reference/ for more options
   gem.name = "salesforce_desafio"
-  gem.homepage = "http://github.com/Jairo Tuboi/salesforce_desafio"
+  gem.homepage = "http://github.com/jttuboi/salesforce_desafio"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
-  gem.email = "tuboi.jairo@gmail.com"
+  gem.summary = %Q{A simple gem to connect salesforce to rails project using restforce gem.}
+  gem.description = %Q{A simple gem to connect salesforce to rails project using restforce gem. }
+  gem.email = "jttuboi@gmail.com"
   gem.authors = ["Jairo Tuboi"]
   # dependencies defined in Gemfile
 end

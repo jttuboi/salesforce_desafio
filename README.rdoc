@@ -1,16 +1,41 @@
-= salesforce_desafio
+= GEM Salesforce Desafio
 
-Description goes here.
+This gem is a partial connector between site RDStation Desafio 2 and site salesforce.com.
+Your function is simplify the using of the gem RestForce according the site RDStation Desafio 2 needs.
 
-== Contributing to salesforce_desafio
- 
-* Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
-* Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
-* Fork the project.
-* Start a feature/bugfix branch.
-* Commit and push until you are happy with your contribution.
-* Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
-* Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
+
+== Working
+
+=== Connect to gem
+
+The authentication with salesforce.com is not done inside gem, it happen on site RDStation Desafio 2.
+To init gem, is used
+    client = SalesforceDesafio::Client.new(provider, uid, name, oauth_token, refresh_token, instance_url, client_id, client_secret)
+The first five parameters is comes from the User class. Other 2 parameter is comes   from app salesforce that allows connect to salesforce site.
+
+=== Get list of Leads
+
+To get list of Leads, is used
+    leads = client.select_pessoas
+The data are Id, FirstName, LastName, Email, Company, Title, Phone and Website.
+
+=== Add pessoa on salesforce
+
+For add a pessoa or (Lead) in salesforce.com, is used
+    id = client.add_pessoa({ first_name: "name",
+                              last_name: "last name",
+                                  email: "email",
+                                company: "company",
+                                  title: "job title",
+                                  phone: "phone",
+                                website: "website" })
+The last_name and company cannot nil, because salesforce.com not accepted. The email can be a format email.
+
+== Links
+
+=== RDStation Desafio 2
+- https://github.com/jttuboi/rdstationdesafio2
+
 
 == Copyright
 
