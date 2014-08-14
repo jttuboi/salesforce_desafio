@@ -35,14 +35,14 @@ module SalesforceDesafio
     def add_pessoa(pessoa)
       # last_name e company sao obrigatorios
       if (pessoa[:last_name] && pessoa[:company])
-        @id = @client.create('Lead',
-                            FirstName: pessoa[:first_name] ? pessoa[:first_name] : "",
+        @id_sales = @client.create('Lead',
+                            FirstName: pessoa[:first_name],
                             LastName: pessoa[:last_name],
-                            Email: pessoa[:email] ? pessoa[:email] : "",
+                            Email: pessoa[:email],
                             Company: pessoa[:company],
-                            Title: pessoa[:title] ? pessoa[:title] : "",
-                            Phone: pessoa[:phone] ? pessoa[:phone] : "",
-                            Website: pessoa[:website] ? pessoa[:website] : "")
+                            Title: pessoa[:title],
+                            Phone: pessoa[:phone],
+                            Website: pessoa[:website])
       else
         false
       end
