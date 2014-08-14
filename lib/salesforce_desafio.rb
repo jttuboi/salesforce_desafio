@@ -56,7 +56,6 @@ module SalesforceDesafio
     
     def select_pessoas
       @pessoas = @client.query("select Id, FirstName, LastName, Email, Company, Title, Phone, Website from Lead")
-      @client.authenticate!
     end
   end
 end
